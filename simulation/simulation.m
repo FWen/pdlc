@@ -7,10 +7,11 @@ SIGMA = cov_model(d, 3);
 figure(2);imagesc(SIGMA);title('Original');
 
 Ns = [50, 100, 200, 400, 800];
+Ns = 100;
 
 for iN=1:length(Ns)
 
-    for k=1:10
+    for k=1:1
         [Ns(iN), k]
         
         r = mvnrnd(zeros(d,1), SIGMA, Ns(iN));
@@ -42,7 +43,7 @@ for iN=1:length(Ns)
             ErrSpe(k,iq+1) = norm(X-SIGMA);
             
             figure(1);subplot(2,3,iq+2); imagesc(X);
-            title(['Lq-BCD, (q=' num2str(qs(iq),'%10.1f') '), FE=' num2str(ErrFro(k,iq),'% 10.2f') ', SE=' num2str(ErrSpe(k,iq),'% 10.2f')]);
+            title(['Lq-BCD, (q=' num2str(qs(iq),'%10.1f') '), FE=' num2str(ErrFro(k,iq+1),'% 10.2f') ', SE=' num2str(ErrSpe(k,iq+1),'% 10.2f')]);
         end
         
         
