@@ -40,7 +40,6 @@ n = size(gdata,2);
 S2 = cov(gdata.'); % sample correlation
 STD_S2 = diag(S2).^(0.5);
 C2  = diag(1./STD_S2)*S2*diag(1./STD_S2);
-% zerorat0 = length(find(abs(C2)<zthresh))/d/d;
 figure(2);subplot(3,3,1); imagesc(abs(hca_order(C2)));
 title('Sample correlation');set(gca,'xtick',[]);box off;
 
@@ -51,7 +50,6 @@ epsilon = 1e-3; % lower bound for the eigenvalue
 tic;
 Xi1 = SOT_cov_est(gdata.');
 Xic1 = diag(1./diag(Xi1).^(0.5))*Xi1*diag(1./diag(Xi1).^(0.5));
-% zerorat1 = length(find(abs(Xic1)<zthresh))/d/d;
 figure(2);subplot(3,3,2); imagesc(abs(hca_order(Xic1)));
 title(['Soft thresholding', ' (' num2str(toc, '%10.1f'), ' sec)']);set(gca,'xtick',[]);box off;
 
