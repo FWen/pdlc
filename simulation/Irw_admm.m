@@ -12,7 +12,7 @@ n = size(S,1);
 rho = 1;
 
 STD_S = diag(S).^(0.5);
-S = diag(1./STD_S)*S*diag(1./STD_S);   %correlation matrix
+S = diag(1./STD_S)*S*diag(1./STD_S); %correlation matrix
 X = sign(S) .* max(abs(S)-lamda, 0); %initialization
 
 if nargin<4
