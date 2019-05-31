@@ -111,19 +111,19 @@ title(['IRW-ADMM', ' (' num2str(toc, '%10.1f'), ' sec)']);set(gca,'xtick',[]);bo
 
 
 %--- eigen-value plots --------------
-eigV(1,:)  = sort((eig(Xi1)),'descend');
-eigV(2,:)  = sort((eig(Xi2)),'descend');
-eigV(3,:)  = sort((eig(Xi3)),'descend');
-eigV(4,:)  = sort((eig(X1)),'descend');
-eigV(5,:)  = sort((eig(X2)),'descend');
-eigV(6,:)  = sort((eig(X3)),'descend');
-eigV(7,:)  = sort((eig(X4)),'descend');
-eigV(8,:)  = sort((eig(X5)),'descend');
+eigV(1,:)  = sort((eig(Xic1)),'descend');
+eigV(2,:)  = sort((eig(Xic2)),'descend');
+eigV(3,:)  = sort((eig(Xic3)),'descend');
+eigV(4,:)  = sort((eig(Xc1)),'descend');
+eigV(5,:)  = sort((eig(Xc2)),'descend');
+eigV(6,:)  = sort((eig(Xc3)),'descend');
+eigV(7,:)  = sort((eig(Xc4)),'descend');
+eigV(8,:)  = sort((eig(Xc5)),'descend');
 xlab = 100:200;
 
 figure(5);
 plot(xlab,eigV(1,xlab),'g-',xlab,eigV(2,xlab),'g--',xlab,eigV(3,xlab),'g.:',...
     xlab,eigV(4,xlab),'k-.',xlab,eigV(5,xlab),'r--',xlab,eigV(6,xlab),'r',xlab,eigV(7,xlab),'r:',xlab,eigV(8,xlab),'b--','linewidth',1);
-legend('Soft thresholding','Hard thresholding','SCAD thresholding','L1-ADMM','Lq-BCD (q=0.5)','Hard-BCD','SCAD-BCD','IRW-ADMM','Location','Best');grid on;
-ylabel('Eigenvalue');xlabel('Eigenvalue Index');
-%ylim([-1.4 0.2]);
+legend('Soft thresh.','Hard thresh.','SCAD thresh.','L1-ADMM','Lq-BCD (q=0.5)','Hard-BCD','SCAD-BCD','IRW-ADMM','Location','Best');grid on;
+ylabel('Eigenvalue amplitude');xlabel('Eigenvalue index');
+ylim([-3, 1.1]);
