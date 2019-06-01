@@ -111,14 +111,14 @@ title(['IRW-ADMM', ' (' num2str(toc, '%10.1f'), ' sec)']);set(gca,'xtick',[]);bo
 
 
 %--- eigen-value plots --------------
-eigV(1,:)  = sort((eig(Xic1)),'descend');
-eigV(2,:)  = sort((eig(Xic2)),'descend');
-eigV(3,:)  = sort((eig(Xic3)),'descend');
-eigV(4,:)  = sort((eig(Xc1)),'descend');
-eigV(5,:)  = sort((eig(Xc2)),'descend');
-eigV(6,:)  = sort((eig(Xc3)),'descend');
-eigV(7,:)  = sort((eig(Xc4)),'descend');
-eigV(8,:)  = sort((eig(Xc5)),'descend');
+eigV(1,:)  = sort(real(eig(Xic1)),'descend');
+eigV(2,:)  = sort(real(eig(Xic2)),'descend');
+eigV(3,:)  = sort(real(eig(Xic3)),'descend');
+eigV(4,:)  = sort(real(eig(Xc1)),'descend');
+eigV(5,:)  = sort(real(eig(Xc2)),'descend');
+eigV(6,:)  = sort(real(eig(Xc3)),'descend');
+eigV(7,:)  = sort(real(eig(Xc4)),'descend');
+eigV(8,:)  = sort(real(eig(Xc5)),'descend');
 xlab = 100:200;
 
 figure(5);
